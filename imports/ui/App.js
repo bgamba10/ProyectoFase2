@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Task from './Task.js';
+import {Tabs, Tab} from 'react-bootstrap-tabs';
 
 // App component - represents the whole app
 export default class App extends Component {
@@ -21,13 +22,35 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
+        
         <header>
-          <h1>Todo List</h1>
+          <h1>Cafetería del Centro Hospitalario</h1>
         </header>
 
-        <ul>
+        <Tabs onSelect={(index, label) => console.log(label + ' selected')}>
+            <Tab label="Inicio">
+
+            Tab 1 content
+            <ul>
           {this.renderTasks()}
         </ul>
+            </Tab>
+            <Tab label="Balance Parte Periodo">Tab 2 content
+
+            </Tab>
+
+            <Tab label="Silver Meal">Tab 3 content
+
+            </Tab>
+            <Tab label="Mínimo Costo Unitario">Tab 4 content
+
+            </Tab>
+        </Tabs>
+
+        
+        
+        
+        
       </div>
     );
   }

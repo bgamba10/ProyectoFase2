@@ -11,6 +11,7 @@
     "@babel/runtime": "^7.0.0",
     "meteor-node-stubs": "^0.4.1",
     "react": "^16.6.3",
+    "react-bootstrap-tabs": "^1.0.2",
     "react-dom": "^16.6.3"
   },
   "meteor": {
