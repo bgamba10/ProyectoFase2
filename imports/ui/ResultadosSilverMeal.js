@@ -12,7 +12,10 @@ export default class SecurityStock extends Component {
 
   renderTabla(){
     return this.state.tabla.map((fila) => (
-      <tr> <td>{fila} </td> <td>{fila} </td> </tr>
+      <tr> 
+        <td>{fila} </td> 
+        <td>{fila} </td> 
+      </tr>
     ));
 
   }
@@ -29,6 +32,7 @@ export default class SecurityStock extends Component {
             <th scope="col">First</th>
           </tr>
         </thead>
+
         <tbody>
         {this.renderTabla()}
         </tbody>

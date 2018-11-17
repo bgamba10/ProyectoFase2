@@ -10,6 +10,8 @@ export default class Costos extends Component {
           tasaMantener: 0
       }
         
+      this.updateInputValueCosto = this.updateInputValueCosto.bind(this);
+      this.updateInputValueTasa = this.updateInputValueTasa.bind(this);
   }
 
     updateInputValueCosto(evt) {

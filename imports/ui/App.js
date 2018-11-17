@@ -19,19 +19,21 @@ export default class App extends Component {
 
         <header>
           <h1>Cafetería del Centro Hospitalario</h1>
+          <i className="fas fa-check"></i>
         </header>
 
         <Tabs onSelect={(index, label) => console.log(label + ' selected')}>
-        
+
             <Tab label="Inicio">
               <div className="tab-padding">
                 <div className = "row">
-                  <div className = "col-sm-7">
+                  <div className = "col-sm-8">
                     <LeadTime></LeadTime>
 
                   </div>
-                  <div className = "col-sm-5">
+                  <div className = "col-sm-4">
                     <Costos></Costos>
+                    <hr/>
                     <SecurityStock></SecurityStock>
 
                   </div>
