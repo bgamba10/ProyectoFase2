@@ -57,9 +57,12 @@ export default class LeadTime extends Component {
     const value = event.target.value;
     const name = event.target.name;
 
+    this.props.onUpdate(name,value);
+
     this.setState({
       [name]: value
     });
+
   }
 
   getIngredients() {

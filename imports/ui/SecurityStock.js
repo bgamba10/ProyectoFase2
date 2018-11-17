@@ -18,36 +18,43 @@ export default class SecurityStock extends Component {
   }
 
   updateInputValueEnero(evt) {
+
+    this.props.onUpdate("ssEnero",evt.target.value);
     this.setState({
       ssEnero: evt.target.value
     });
   }
 
   updateInputValueFebrero(evt) {
+    this.props.onUpdate("ssFebrero",evt.target.value);
     this.setState({
       ssFebrero: evt.target.value
     });
   }
 
   updateInputValueMarzo(evt) {
+    this.props.onUpdate("ssMarzo",evt.target.value);
     this.setState({
       ssMarzo: evt.target.value
     });
   }
 
   updateInputValueAbril(evt) {
+    this.props.onUpdate("ssAbril",evt.target.value);
     this.setState({
       ssAbril: evt.target.value
     });
   }
 
   updateInputValueMayo(evt) {
+    this.props.onUpdate("ssMayo",evt.target.value);
     this.setState({
       ssMayo: evt.target.value
     });
   }
 
   updateInputValueJunio(evt) {
+    this.props.onUpdate("ssJunio",evt.target.value);
     this.setState({
       ssJunio: evt.target.value
     });
