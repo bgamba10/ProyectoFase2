@@ -55,9 +55,10 @@ export default class SecurityStock extends Component {
     //Aca creamos toda la tabla que se va renderizar después
 
     //El recorrido se hace para cada periodo
+    var tabla = [[]];
     for (var i = 0; i < 6 ; i++)
     {
-
+      
     }
   }
 
