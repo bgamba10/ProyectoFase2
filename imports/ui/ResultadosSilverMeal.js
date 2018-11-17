@@ -12,6 +12,7 @@ export default class SecurityStock extends Component {
 
   renderTabla(){
     return this.state.tabla.map((fila) => (
+
       <tr>
       {this.renderValor(fila)}
       </tr>
@@ -43,6 +44,7 @@ export default class SecurityStock extends Component {
             <th scope="col">Costo total/T </th>
           </tr>
         </thead>
+
         <tbody>
         {this.renderTabla()}
         </tbody>
