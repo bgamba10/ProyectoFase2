@@ -22,11 +22,11 @@ export default class App extends Component {
             <Tab label="Inicio">
 
               <div className = "row">
-                <div className = "col-sm-8">
+                <div className = "col-sm-7">
                   <LeadTime></LeadTime>
 
                 </div>
-                <div className = "col-sm-4">
+                <div className = "col-sm-5">
                   <Costos></Costos>
                   <SecurityStock></SecurityStock>
 
