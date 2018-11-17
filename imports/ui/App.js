@@ -1,23 +1,14 @@
 import React, { Component } from 'react';
 
-import Task from './Task.js';
 import {Tabs, Tab} from 'react-bootstrap-tabs';
+import LeadTime from './LeadTime'
+import Costos from './Costos'
+import SecurityStock from './SecurityStock'
+import Demanda from './Demanda'
+import Recetas from './Recetas'
 
 // App component - represents the whole app
 export default class App extends Component {
-  getTasks() {
-    return [
-      { _id: 1, text: 'This is task 1' },
-      { _id: 2, text: 'This is task 2' },
-      { _id: 3, text: 'This is task 3' },
-    ];
-  }
-
-  renderTasks() {
-    return this.getTasks().map((task) => (
-      <Task key={task._id} task={task}/>
-    ));
-  }
 
   render() {
     return (
@@ -30,10 +21,22 @@ export default class App extends Component {
         <Tabs onSelect={(index, label) => console.log(label + ' selected')}>
             <Tab label="Inicio">
 
-            Tab 1 content
-            <ul>
-          {this.renderTasks()}
-        </ul>
+              <div className = "row">
+                <div className = "col-sm-8">
+                  <LeadTime></LeadTime>
+
+                </div>
+                <div className = "col-sm-4">
+                  <Costos></Costos>
+                  <SecurityStock></SecurityStock>
+
+                </div>
+
+              </div>
+              <Demanda></Demanda>
+              <Recetas></Recetas>
+              
+            
             </Tab>
             <Tab label="Balance Parte Periodo">Tab 2 content
 
