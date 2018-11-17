@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-
 import {Tabs, Tab} from 'react-bootstrap-tabs';
+
+import './style.css'
+
 import LeadTime from './LeadTime'
 import Costos from './Costos'
 import SecurityStock from './SecurityStock'
@@ -20,35 +22,46 @@ export default class App extends Component {
         </header>
 
         <Tabs onSelect={(index, label) => console.log(label + ' selected')}>
+        
             <Tab label="Inicio">
+              <div className="tab-padding">
+                <div className = "row">
+                  <div className = "col-sm-7">
+                    <LeadTime></LeadTime>
 
-              <div className = "row">
-                <div className = "col-sm-7">
-                  <LeadTime></LeadTime>
+                  </div>
+                  <div className = "col-sm-5">
+                    <Costos></Costos>
+                    <SecurityStock></SecurityStock>
+
+                  </div>
 
                 </div>
-                <div className = "col-sm-5">
-                  <Costos></Costos>
-                  <SecurityStock></SecurityStock>
+                <Demanda></Demanda>
+                <Recetas></Recetas>
+              </div>
+            </Tab>
 
-                </div>
+            <Tab label="Balance Parte Periodo">
+              <div className="tab-padding">
+                 
+                 Tab 2 content
 
               </div>
-              <Demanda></Demanda>
-              <Recetas></Recetas>
-
-
-            </Tab>
-            <Tab label="Balance Parte Periodo">Tab 2 content
-
             </Tab>
 
             <Tab label="Silver Meal">
-            <SilverMeal></SilverMeal>
-
+              <div className="tab-padding">
+                <SilverMeal></SilverMeal>
+              </div>
             </Tab>
-            <Tab label="Mínimo Costo Unitario">Tab 4 content
 
+            <Tab label="Mínimo Costo Unitario">
+              <div className="tab-padding">
+                 
+                 Tab 4 content
+
+              </div>
             </Tab>
         </Tabs>
 

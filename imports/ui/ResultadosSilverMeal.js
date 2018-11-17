@@ -21,8 +21,17 @@ export default class SecurityStock extends Component {
     return (
       <div>
       <h2> Resultados Silver Meal</h2>
-      <table>
+      <table className="table">
+
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+          </tr>
+        </thead>
+        <tbody>
         {this.renderTabla()}
+        </tbody>
       </table>
       </div>
     );
