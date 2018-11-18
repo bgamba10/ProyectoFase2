@@ -104,7 +104,7 @@ export default class App extends Component {
 
             <Tab label="Balance Parte Periodo">
               <div className="tab-padding">
-                 
+
                  Tab 2 content
 
               </div>
@@ -118,7 +118,7 @@ export default class App extends Component {
 
             <Tab label="Mínimo Costo Unitario">
               <div className="tab-padding">
-                 
+
                  Tab 4 content
 
               </div>
