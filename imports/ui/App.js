@@ -61,7 +61,13 @@ export default class App extends Component {
         ssMarzo: 0,
         ssAbril: 0,
         ssMayo: 0,
-        ssJunio: 0
+        ssJunio: 0,
+        Esteticas: [0,0,0,0,0,0],
+        Cardiacas: [0,0,0,0,0,0],
+        Respiratorias: [0,0,0,0,0,0],
+        Ortopedicas: [0,0,0,0,0,0],
+        Neurologicas: [0,0,0,0,0,0],
+        Pediatricas: [0,0,0,0,0,0]
       }
     }
 
@@ -97,8 +103,8 @@ export default class App extends Component {
                   </div>
 
                 </div>
-                <Demanda></Demanda>
-                <Recetas></Recetas>
+                <Demanda onUpdate={this.onUpdate}></Demanda>
+                <Recetas onUpdate={this.onUpdate}></Recetas>
               </div>
             </Tab>
 
