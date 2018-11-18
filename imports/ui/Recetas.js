@@ -13,7 +13,11 @@ export default class Recetas extends Component {
 
   render() {
     return (
-      <p>hola</p>
+      <div>
+
+
+
+      </div>
     );
   }
 }

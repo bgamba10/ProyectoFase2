@@ -15,12 +15,15 @@ export default class Costos extends Component {
   }
 
     updateInputValueCosto(evt) {
+
+    this.props.onUpdate("costoFijoPedido",evt.target.value);
     this.setState({
       costoFijoPedido: evt.target.value
     });
   }
 
   updateInputValueTasa(evt) {
+    this.props.onUpdate("tasaMantener",evt.target.value);
     this.setState({
       tasaMantener: evt.target.value
     });
