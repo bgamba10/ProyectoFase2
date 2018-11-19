@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 export default class LeadTime extends Component {
-  
+
 
   constructor(props) {
       super(props);
@@ -44,17 +44,17 @@ export default class LeadTime extends Component {
         cuPollo: 0,
         ltCompota: 0,
         cuCompota: 0
-            
+
       }
-        
+
       this.handleInputChange = this.handleInputChange.bind(this);
-      
+
   }
 
 
   handleInputChange(event) {
-    
-    const value = event.target.value;
+
+    const value = parseInt(event.target.value);
     const name = event.target.name;
 
     this.props.onUpdate(name,value);
@@ -67,7 +67,7 @@ export default class LeadTime extends Component {
 
   getIngredients() {
      return [
-     
+
        {_id: "Sopa", text: "Sopa", und: "porción", q:0},
        {_id: "Arroz", text: "Arroz", und: "porción", q:0},
        {_id: "Carne", text: "Carne", und: "porción", q:0},
@@ -109,7 +109,7 @@ export default class LeadTime extends Component {
             <input name={"cu"+ing._id} defaultValue={ing.q} onChange={this.handleInputChange} type="number" className="form-control" placeholder="Costo Unitario" min="0"/><span> $/{ing.und}</span>
           </div>
           </div>
-        
+
       </div>
       </div>
     <br/>
@@ -119,7 +119,7 @@ export default class LeadTime extends Component {
     ));
 
 
-    
+
 
   }
 
