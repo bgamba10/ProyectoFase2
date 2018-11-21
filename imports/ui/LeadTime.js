@@ -103,7 +103,7 @@ export default class LeadTime extends Component {
         <div className="row">
           <div className="col-sm-6">
 
-            <input name={"lt"+ing._id} defaultValue={ing.q} onChange={this.handleInputChange} type="number" className="form-control" placeholder="Lead Time" min="0" /><span> meses</span>
+            <input name={"lt"+ing._id} value={this.state["lt"+ing._id]} onChange={this.handleInputChange} type="number" className="form-control" placeholder="Lead Time" min="0" /><span> meses</span>
           </div>
           <div className="col-sm-6">
             <input name={"cu"+ing._id} defaultValue={ing.q} onChange={this.handleInputChange} type="number" className="form-control" placeholder="Costo Unitario" min="0"/><span> $/{ing.und}</span>
