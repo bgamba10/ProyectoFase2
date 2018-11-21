@@ -10,28 +10,40 @@ import {
 import 'react-accessible-accordion/dist/fancy-example.css';
 
 export default class Demanda extends Component {
-  
+
 
   constructor(props) {
       super(props);
       this.state = {
-        Esteticas: [0,0,0,0,0,0],
-        Cardiacas: [0,0,0,0,0,0],
-        Respiratorias: [0,0,0,0,0,0],
-        Ortopedicas: [0,0,0,0,0,0],
-        Neurologicas: [0,0,0,0,0,0],
-        Pediatricas: [0,0,0,0,0,0]
-            
+        Esteticas: [719,726,795,706,694,684],
+        Cardiacas: [278,281,273,273,269,265],
+        Respiratorias: [394,398,387,387,381,375],
+        Ortopedicas: [487,492,478,478,470,464],
+        Neurologicas: [223,234,228,228,224,221],
+        Pediatricas: [209,211,205,205,202,199]
+
       }
       this.handleInputChange = this.handleInputChange.bind(this);
   }
 
+  componentDidMount(){
+    this.setState({
+      Esteticas: [719,726,795,706,694,684],
+      Cardiacas: [278,281,273,273,269,265],
+      Respiratorias: [394,398,387,387,381,375],
+      Ortopedicas: [487,492,478,478,470,464],
+      Neurologicas: [223,234,228,228,224,221],
+      Pediatricas: [209,211,205,205,202,199]
+
+    })
+  }
+
   handleInputChange(event) {
-    
-    const value = event.target.value;
+
+    const value = parseInt(event.target.value);
     const name = event.target.name;
 
-    
+
 
     this.setState({
 
@@ -47,29 +59,29 @@ export default class Demanda extends Component {
     switch (n) {
         case "enero":
           posicion = 0;
-                
+
             break;
         case "febrero":
           posicion = 1;
-            
+
             break;
         case "marzo":
           posicion = 2;
-            
+
             break;
         case "abril":
           posicion = 3;
-            
+
             break;
         case "mayo":
           posicion = 4;
-            
+
             break;
         case "junio":
           posicion = 5;
 
-        default: 
-                
+        default:
+
     }
 
     switch (v) {
@@ -85,7 +97,7 @@ export default class Demanda extends Component {
 
         let temp1 = this.state.Cardiacas;
         temp1[posicion] = value;
-        
+
         this.setState({
           Cardiacas: temp1
         });
@@ -105,7 +117,7 @@ export default class Demanda extends Component {
         this.setState({
           Ortopedicas: temp3
         });
-        this.props.onUpdate("Ortopedicas",temp3);       
+        this.props.onUpdate("Ortopedicas",temp3);
         break;
       case "Neurologicas":
         let temp4 = this.state.Neurologicas;
@@ -113,7 +125,7 @@ export default class Demanda extends Component {
         this.setState({
           Neurologicas: temp4
         });
-        this.props.onUpdate("Neurologicas",temp4);         
+        this.props.onUpdate("Neurologicas",temp4);
         break;
       case "Pediatricas":
         let temp5 = this.state.Pediatricas;
@@ -123,14 +135,14 @@ export default class Demanda extends Component {
         });
         this.props.onUpdate("Pediatricas",temp5);
       default:
-        
+
     }
 
   }
 
   getCirugias() {
      return [
-     
+
        {_id: "Esteticas", text: "Estéticas", q:0},
        {_id: "Cardiacas", text: "Cardiacas", q:0},
        {_id: "Respiratorias", text: "Respiratorias", q:0},
@@ -232,7 +244,7 @@ export default class Demanda extends Component {
             <AccordionItemBody>
                 <div>
                 <div className="row">
-                  
+
                   {this.renderCirugiasEnero()}
 
                 </div>
@@ -247,7 +259,7 @@ export default class Demanda extends Component {
             <AccordionItemBody>
                 <div>
                 <div className="row">
-                  
+
                   {this.renderCirugiasFebrero()}
 
                 </div>
@@ -262,7 +274,7 @@ export default class Demanda extends Component {
             <AccordionItemBody>
                 <div>
                 <div className="row">
-                  
+
                   {this.renderCirugiasMarzo()}
 
                 </div>
@@ -277,7 +289,7 @@ export default class Demanda extends Component {
             <AccordionItemBody>
                 <div>
                 <div className="row">
-                  
+
                   {this.renderCirugiasAbril()}
 
                 </div>
@@ -292,7 +304,7 @@ export default class Demanda extends Component {
             <AccordionItemBody>
                 <div>
                 <div className="row">
-                  
+
                   {this.renderCirugiasMayo()}
 
                 </div>
@@ -307,7 +319,7 @@ export default class Demanda extends Component {
             <AccordionItemBody>
                 <div>
                 <div className="row">
-                  
+
                   {this.renderCirugiasJunio()}
 
                 </div>

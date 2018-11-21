@@ -1,60 +1,104 @@
 import React, { Component } from 'react';
 
 export default class LeadTime extends Component {
-  
+
 
   constructor(props) {
       super(props);
       this.state = {
         ltSopa: 0,
-        cuSopa: 0,
+        cuSopa: 158,
         ltArroz: 0,
-        cuArroz: 0,
+        cuArroz: 77,
         ltCarne: 0,
-        cuCarne: 0,
+        cuCarne: 169,
         ltAgua: 0,
-        cuAgua: 0,
+        cuAgua: 37,
         ltYogurt: 0,
-        cuYogurt: 0,
+        cuYogurt: 144,
         ltGelatina: 0,
-        cuGelatina: 0,
+        cuGelatina: 110,
         ltTomate: 0,
-        cuTomate: 0,
+        cuTomate: 93,
         ltSalmon: 0,
-        cuSalmon: 0,
+        cuSalmon: 197,
         ltVerduras: 0,
-        cuVerduras: 0,
+        cuVerduras: 88,
         ltManzana: 0,
-        cuManzana: 0,
+        cuManzana: 174,
         ltBrocoli: 0,
-        cuBrocoli: 0,
+        cuBrocoli: 86,
         ltHuevo: 0,
-        cuHuevo: 0,
+        cuHuevo: 109,
         ltAguacate: 0,
-        cuAguacate: 0,
+        cuAguacate: 55,
         ltFrutosSecos: 0,
-        cuFrutosSecos: 0,
+        cuFrutosSecos: 200,
         ltPasta: 0,
-        cuPasta: 0,
+        cuPasta: 62,
         ltCereal: 0,
-        cuCereal: 0,
+        cuCereal: 55,
         ltLeche: 0,
-        cuLeche: 0,
+        cuLeche: 91,
         ltPollo: 0,
-        cuPollo: 0,
+        cuPollo: 104,
         ltCompota: 0,
-        cuCompota: 0
-            
+        cuCompota: 145
+
       }
-        
+
       this.handleInputChange = this.handleInputChange.bind(this);
-      
+
+  }
+
+  componentDidMount(){
+    this.setState({
+      ltSopa: 0,
+      cuSopa: 158,
+      ltArroz: 0,
+      cuArroz: 77,
+      ltCarne: 0,
+      cuCarne: 169,
+      ltAgua: 0,
+      cuAgua: 37,
+      ltYogurt: 0,
+      cuYogurt: 144,
+      ltGelatina: 0,
+      cuGelatina: 110,
+      ltTomate: 0,
+      cuTomate: 93,
+      ltSalmon: 0,
+      cuSalmon: 197,
+      ltVerduras: 0,
+      cuVerduras: 88,
+      ltManzana: 0,
+      cuManzana: 174,
+      ltBrocoli: 0,
+      cuBrocoli: 86,
+      ltHuevo: 0,
+      cuHuevo: 109,
+      ltAguacate: 0,
+      cuAguacate: 55,
+      ltFrutosSecos: 0,
+      cuFrutosSecos: 200,
+      ltPasta: 0,
+      cuPasta: 62,
+      ltCereal: 0,
+      cuCereal: 55,
+      ltLeche: 0,
+      cuLeche: 91,
+      ltPollo: 0,
+      cuPollo: 104,
+      ltCompota: 0,
+      cuCompota: 145
+
+    })
   }
 
 
   handleInputChange(event) {
-    
-    const value = event.target.value;
+
+    const value = parseInt(event.target.value);
     const name = event.target.name;
 
     this.props.onUpdate(name,value);
@@ -67,7 +111,7 @@ export default class LeadTime extends Component {
 
   getIngredients() {
      return [
-     
+
        {_id: "Sopa", text: "Sopa", und: "porción", q:0},
        {_id: "Arroz", text: "Arroz", und: "porción", q:0},
        {_id: "Carne", text: "Carne", und: "porción", q:0},
@@ -109,7 +153,7 @@ export default class LeadTime extends Component {
             <input name={"cu"+ing._id} defaultValue={ing.q} onChange={this.handleInputChange} type="number" className="form-control" placeholder="Costo Unitario" min="0"/><span> $/{ing.und}</span>
           </div>
           </div>
-        
+
       </div>
       </div>
     <br/>
@@ -119,7 +163,7 @@ export default class LeadTime extends Component {
     ));
 
 
-    
+
 
   }
 

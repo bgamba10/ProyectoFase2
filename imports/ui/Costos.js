@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 
 export default class Costos extends Component {
-  
+
 
   constructor(props) {
       super(props);
       this.state = {
-          costoFijoPedido: 0,
-          tasaMantener: 0
+          costoFijoPedido: 23000,
+          tasaMantener: 15
       }
-        
+
       this.updateInputValueCosto = this.updateInputValueCosto.bind(this);
       this.updateInputValueTasa = this.updateInputValueTasa.bind(this);
   }
 
-    updateInputValueCosto(evt) {
+  componentDidMount(){
+    console.log("COMPONENT DID MOUNT")
+    this.setState({
+        costoFijoPedido: 23000,
+        tasaMantener: 15
+    })
+  }
 
+    updateInputValueCosto(evt) {
+      console.log("UPDATE")
     this.props.onUpdate("costoFijoPedido",evt.target.value);
     this.setState({
       costoFijoPedido: evt.target.value
@@ -23,6 +31,7 @@ export default class Costos extends Component {
   }
 
   updateInputValueTasa(evt) {
+    console.log("UPDATE")
     this.props.onUpdate("tasaMantener",evt.target.value);
     this.setState({
       tasaMantener: evt.target.value
