@@ -6,15 +6,26 @@ export default class SecurityStock extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        ssEnero: 0,
-        ssFebrero: 0,
-        ssMarzo: 0,
-        ssAbril: 0,
-        ssMayo: 0,
-        ssJunio: 0
+        ssEnero: 10,
+        ssFebrero: 10,
+        ssMarzo: 10,
+        ssAbril: 10,
+        ssMayo: 10,
+        ssJunio: 10
 
       }
 
+  }
+
+  componentDidMount(){
+    this.setState({
+      ssEnero: 10,
+      ssFebrero: 10,
+      ssMarzo: 10,
+      ssAbril: 10,
+      ssMayo: 10,
+      ssJunio: 10
+    })
   }
 
   updateInputValueEnero(evt) {

@@ -15,15 +15,27 @@ export default class Demanda extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        Esteticas: [0,0,0,0,0,0],
-        Cardiacas: [0,0,0,0,0,0],
-        Respiratorias: [0,0,0,0,0,0],
-        Ortopedicas: [0,0,0,0,0,0],
-        Neurologicas: [0,0,0,0,0,0],
-        Pediatricas: [0,0,0,0,0,0]
+        Esteticas: [719,726,795,706,694,684],
+        Cardiacas: [278,281,273,273,269,265],
+        Respiratorias: [394,398,387,387,381,375],
+        Ortopedicas: [487,492,478,478,470,464],
+        Neurologicas: [223,234,228,228,224,221],
+        Pediatricas: [209,211,205,205,202,199]
 
       }
       this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  componentDidMount(){
+    this.setState({
+      Esteticas: [719,726,795,706,694,684],
+      Cardiacas: [278,281,273,273,269,265],
+      Respiratorias: [394,398,387,387,381,375],
+      Ortopedicas: [487,492,478,478,470,464],
+      Neurologicas: [223,234,228,228,224,221],
+      Pediatricas: [209,211,205,205,202,199]
+
+    })
   }
 
   handleInputChange(event) {
