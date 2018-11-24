@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {withTracker} from 'meteor/react-meteor-data';
-
+import "./main.css";
 
 import Navbar from "./components/layout/Navbar";
 

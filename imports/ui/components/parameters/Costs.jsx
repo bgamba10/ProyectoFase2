@@ -1,4 +1,12 @@
 import React, {Component} from "react";
+import {
+     Accordion,
+     AccordionItem,
+     AccordionItemTitle,
+     AccordionItemBody,
+ } from 'react-accessible-accordion';
+
+ import 'react-accessible-accordion/dist/fancy-example.css';
 
 class Costs extends Component {
     constructor(props) {
@@ -27,217 +35,392 @@ class Costs extends Component {
         }
     }
 
-    renderCostsLeadTime() {
-        return this.props.materials.map((material) => {
+    renderOctubre(){
+      return this.props.materials.map((material) => {
             return (
                 <tr key={material._id}>
-                    <td className="first-row">{material.nombre}</td>
+                    <td>{material.nombre}</td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`ordenar,${material.nombre},menos2`} min="0" required="" type="number"
-                               defaultValue={material.costos.ordenar.menos2}/></td>
+                               defaultValue={material.costos.ordenar.menos2} placeholder="Costo Ordenar"/></td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`adquirir,${material.nombre},menos2`} min="0" required="" type="number"
-                               defaultValue={material.costos.adquirir.menos2}/></td>
+                               defaultValue={material.costos.adquirir.menos2} placeholder="Costo Adquirir"/></td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`mantener,${material.nombre},menos2`} min="0" required="" type="number"
-                               defaultValue={material.costos.mantener.menos2}/></td>
+                               defaultValue={material.costos.mantener.menos2} placeholder="Costo Mantener"/></td>
+                </tr>
+            )
+        });
+    }
 
+    renderNoviembre(){
+      return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`ordenar,${material.nombre},menos1`} min="0" required="" type="number"
-                               defaultValue={material.costos.ordenar.menos1}/></td>
+                               defaultValue={material.costos.ordenar.menos1} placeholder="Costo Ordenar"/></td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`adquirir,${material.nombre},menos1`} min="0" required="" type="number"
-                               defaultValue={material.costos.adquirir.menos1}/></td>
+                               defaultValue={material.costos.adquirir.menos1} placeholder="Costo Adquirir"/></td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`mantener,${material.nombre},menos1`} min="0" required="" type="number"
-                               defaultValue={material.costos.mantener.menos1}/></td>
+                               defaultValue={material.costos.mantener.menos1} placeholder="Costo Mantener"/></td>
+                </tr>
+            )
+        });
+    }
 
+    renderDiciembre(){
+      return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`ordenar,${material.nombre},cero`} min="0" required="" type="number"
-                               defaultValue={material.costos.ordenar.cero}/></td>
+                               defaultValue={material.costos.ordenar.cero} placeholder="Costo Ordenar"/></td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`adquirir,${material.nombre},cero`} min="0" required="" type="number"
-                               defaultValue={material.costos.adquirir.cero}/></td>
+                               defaultValue={material.costos.adquirir.cero} placeholder="Costo Adquirir"/></td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`mantener,${material.nombre},cero`} min="0" required="" type="number"
-                               defaultValue={material.costos.mantener.cero}/></td>
+                               defaultValue={material.costos.mantener.cero} placeholder="Costo Mantener"/></td>
                 </tr>
             )
         });
     }
 
-    renderCostsFirst() {
-        return this.props.materials.map((material) => {
+    renderEnero(){
+      return this.props.materials.map((material) => {
             return (
                 <tr key={material._id}>
-                    <td className="first-row">{material.nombre}</td>
+                    <td>{material.nombre}</td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`ordenar,${material.nombre},primero`} min="0" required="" type="number"
-                               defaultValue={material.costos.ordenar.primero}/></td>
+                               defaultValue={material.costos.ordenar.primero} placeholder="Costo Ordenar"/></td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`adquirir,${material.nombre},primero`} min="0" required="" type="number"
-                               defaultValue={material.costos.adquirir.primero}/></td>
+                               defaultValue={material.costos.adquirir.primero} placeholder="Costo Adquirir"/></td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`mantener,${material.nombre},primero`} min="0" required="" type="number"
-                               defaultValue={material.costos.mantener.primero}/></td>
-
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`ordenar,${material.nombre},segundo`} min="0" required="" type="number"
-                               defaultValue={material.costos.ordenar.segundo}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`adquirir,${material.nombre},segundo`} min="0" required="" type="number"
-                               defaultValue={material.costos.adquirir.segundo}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`mantener,${material.nombre},segundo`} min="0" required="" type="number"
-                               defaultValue={material.costos.mantener.segundo}/></td>
-
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`ordenar,${material.nombre},tercero`} min="0" required="" type="number"
-                               defaultValue={material.costos.ordenar.tercero}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`adquirir,${material.nombre},tercero`} min="0" required="" type="number"
-                               defaultValue={material.costos.adquirir.tercero}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`mantener,${material.nombre},tercero`} min="0" required="" type="number"
-                               defaultValue={material.costos.mantener.tercero}/></td>
+                               defaultValue={material.costos.mantener.primero} placeholder="Costo Mantener"/></td>
                 </tr>
             )
         });
     }
 
-    renderCostsSecond() {
-        return this.props.materials.map((material) => {
+    renderFebrero(){
+      return this.props.materials.map((material) => {
             return (
                 <tr key={material._id}>
-                    <td className="first-row">{material.nombre}</td>
+                    <td>{material.nombre}</td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`ordenar,${material.nombre},cuarto`} min="0" required="" type="number"
-                               defaultValue={material.costos.ordenar.cuarto}/></td>
+                               name={`ordenar,${material.nombre},segundo`} min="0" required="" type="number"
+                               defaultValue={material.costos.ordenar.segundo} placeholder="Costo Ordenar"/></td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`adquirir,${material.nombre},cuarto`} min="0" required="" type="number"
-                               defaultValue={material.costos.adquirir.cuarto}/></td>
+                               name={`adquirir,${material.nombre},segundo`} min="0" required="" type="number"
+                               defaultValue={material.costos.adquirir.segundo} placeholder="Costo Adquirir"/></td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`mantener,${material.nombre},cuarto`} min="0" required="" type="number"
-                               defaultValue={material.costos.mantener.cuarto}/></td>
-
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`ordenar,${material.nombre},quinto`} min="0" required="" type="number"
-                               defaultValue={material.costos.ordenar.quinto}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`adquirir,${material.nombre},quinto`} min="0" required="" type="number"
-                               defaultValue={material.costos.adquirir.quinto}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`mantener,${material.nombre},quinto`} min="0" required="" type="number"
-                               defaultValue={material.costos.mantener.quinto}/></td>
-
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`ordenar,${material.nombre},sexto`} min="0" required="" type="number"
-                               defaultValue={material.costos.ordenar.sexto}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`adquirir,${material.nombre},sexto`} min="0" required="" type="number"
-                               defaultValue={material.costos.adquirir.sexto}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`mantener,${material.nombre},sexto`} min="0" required="" type="number"
-                               defaultValue={material.costos.mantener.sexto}/></td>
+                               name={`mantener,${material.nombre},segundo`} min="0" required="" type="number"
+                               defaultValue={material.costos.mantener.segundo} placeholder="Costo Mantener"/></td>
                 </tr>
             )
         });
     }
+
+    renderMarzo(){
+      return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`ordenar,${material.nombre},tercero`} min="0" required="" type="number"
+                               defaultValue={material.costos.ordenar.tercero} placeholder="Costo Ordenar"/></td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`adquirir,${material.nombre},tercero`} min="0" required="" type="number"
+                               defaultValue={material.costos.adquirir.tercero} placeholder="Costo Adquirir"/></td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`mantener,${material.nombre},tercero`} min="0" required="" type="number"
+                               defaultValue={material.costos.mantener.tercero} placeholder="Costo Mantener"/></td>
+                </tr>
+            )
+        });
+    }
+
+    renderAbril(){
+      return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`ordenar,${material.nombre},cuarto`} min="0" required="" type="number"
+                               defaultValue={material.costos.ordenar.cuarto} placeholder="Costo Ordenar"/></td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`adquirir,${material.nombre},cuarto`} min="0" required="" type="number"
+                               defaultValue={material.costos.adquirir.cuarto} placeholder="Costo Adquirir"/></td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`mantener,${material.nombre},cuarto`} min="0" required="" type="number"
+                               defaultValue={material.costos.mantener.cuarto} placeholder="Costo Mantener"/></td>
+                </tr>
+            )
+        });
+    }
+
+    renderMayo(){
+      return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`ordenar,${material.nombre},quinto`} min="0" required="" type="number"
+                               defaultValue={material.costos.ordenar.quinto} placeholder="Costo Ordenar"/></td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`adquirir,${material.nombre},quinto`} min="0" required="" type="number"
+                               defaultValue={material.costos.adquirir.quinto} placeholder="Costo Adquirir"/></td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`mantener,${material.nombre},quinto`} min="0" required="" type="number"
+                               defaultValue={material.costos.mantener.quinto} placeholder="Costo Mantener"/></td>
+                </tr>
+            )
+        });
+    }
+
+    renderJunio(){
+      return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`ordenar,${material.nombre},sexto`} min="0" required="" type="number"
+                               defaultValue={material.costos.ordenar.sexto} placeholder="Costo Ordenar"/></td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`adquirir,${material.nombre},sexto`} min="0" required="" type="number"
+                               defaultValue={material.costos.adquirir.sexto} placeholder="Costo Adquirir"/></td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`mantener,${material.nombre},sexto`} min="0" required="" type="number"
+                               defaultValue={material.costos.mantener.sexto} placeholder="Costo Mantener"/></td>
+                </tr>
+            )
+        });
+    }
+
 
     render() {
         return (
-            <div className="container-fluid">
-                <div className="card">
-                    <div className="content">
-                        <div className="card-header ">
-                            <h4 className="card-title">Estructura de costos</h4>
-                        </div>
-                        <div className="card-body ">
-                            <table className="table table-bordered">
-                                <tbody className="">
-                                <tr>
-                                    <th></th>
-                                    <th colSpan="9" scope="colgroup">Mes</th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th colSpan="3" scope="colgroup">-2</th>
-                                    <th colSpan="3" scope="colgroup">-1</th>
-                                    <th colSpan="3" scope="colgroup">0</th>
-                                </tr>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Ordenar</th>
-                                    <th>Adquirir</th>
-                                    <th>Mantener</th>
-                                    <th>Ordenar</th>
-                                    <th>Adquirir</th>
-                                    <th>Mantener</th>
-                                    <th>Ordenar</th>
-                                    <th>Adquirir</th>
-                                    <th>Mantener</th>
-                                </tr>
-                                {this.renderCostsLeadTime()}
-                                </tbody>
-                            </table>
-                            <table className="table table-bordered">
-                                <tbody className="">
-                                <tr>
-                                    <th></th>
-                                    <th colSpan="9" scope="colgroup">Mes</th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th colSpan="3" scope="colgroup">1</th>
-                                    <th colSpan="3" scope="colgroup">2</th>
-                                    <th colSpan="3" scope="colgroup">3</th>
-                                </tr>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Ordenar</th>
-                                    <th>Adquirir</th>
-                                    <th>Mantener</th>
-                                    <th>Ordenar</th>
-                                    <th>Adquirir</th>
-                                    <th>Mantener</th>
-                                    <th>Ordenar</th>
-                                    <th>Adquirir</th>
-                                    <th>Mantener</th>
-                                </tr>
-                                {this.renderCostsFirst()}
-                                </tbody>
-                            </table>
-                            <table className="table table-bordered">
-                                <tbody className="">
-                                <tr>
-                                    <th></th>
-                                    <th colSpan="9" scope="colgroup">Mes</th>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <th colSpan="3" scope="colgroup">4</th>
-                                    <th colSpan="3" scope="colgroup">5</th>
-                                    <th colSpan="3" scope="colgroup">6</th>
-                                </tr>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Ordenar</th>
-                                    <th>Adquirir</th>
-                                    <th>Mantener</th>
-                                    <th>Ordenar</th>
-                                    <th>Adquirir</th>
-                                    <th>Mantener</th>
-                                    <th>Ordenar</th>
-                                    <th>Adquirir</th>
-                                    <th>Mantener</th>
-                                </tr>
-                                {this.renderCostsSecond()}
-                                </tbody>
-                            </table>
-                        </div>
+            <section id="three" class="wrapper style1">
+                <div class="container">
+                  <header class="major special">        
+                    <h2>Costos por ingrediente cada mes</h2>
+                    <p>Haga click en cada mes para ingresar sus respectivos costos de ordenar, adquirir y mantener en inventario</p>
+                    </header>
+                    
+                        <Accordion>
+                          <AccordionItem expanded="true">
+                            <AccordionItemTitle>
+                              <h4>Octubre 2018</h4>
+                            </AccordionItemTitle>
+                            <AccordionItemBody>
+                              <div className="table-wrapper">
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Ingrediente</th>
+                                        <th>Costo Ordenar</th>
+                                        <th>Costo Adquirir</th>
+                                        <th>Costo Mantener</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {this.renderOctubre()}
+                                    </tbody>
+                                  </table>
+                              </div>
+                            </AccordionItemBody>
+                          </AccordionItem>
+                          <AccordionItem>
+                            <AccordionItemTitle>
+                              <h4>Noviembre 2018</h4>
+                            </AccordionItemTitle>
+                            <AccordionItemBody>
+                              <div className="table-wrapper">
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Ingrediente</th>
+                                        <th>Costo Ordenar</th>
+                                        <th>Costo Adquirir</th>
+                                        <th>Costo Mantener</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {this.renderNoviembre()}
+                                    </tbody>
+                                  </table>
+                              </div>
+                            </AccordionItemBody>
+                          </AccordionItem>
+                          <AccordionItem>
+                            <AccordionItemTitle>
+                              <h4>Diciembre 2018</h4>
+                            </AccordionItemTitle>
+                            <AccordionItemBody>
+                              <div className="table-wrapper">
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Ingrediente</th>
+                                        <th>Costo Ordenar</th>
+                                        <th>Costo Adquirir</th>
+                                        <th>Costo Mantener</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {this.renderDiciembre()}
+                                    </tbody>
+                                  </table>
+                              </div>
+                            </AccordionItemBody>
+                          </AccordionItem>
+                          <AccordionItem>
+                            <AccordionItemTitle>
+                              <h4>Enero 2019</h4>
+                            </AccordionItemTitle>
+                            <AccordionItemBody>
+                              <div className="table-wrapper">
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Ingrediente</th>
+                                        <th>Costo Ordenar</th>
+                                        <th>Costo Adquirir</th>
+                                        <th>Costo Mantener</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {this.renderEnero()}
+                                    </tbody>
+                                  </table>
+                              </div>
+                            </AccordionItemBody>
+                          </AccordionItem>
+                          <AccordionItem>
+                            <AccordionItemTitle>
+                              <h4>Febrero 2019</h4>
+                            </AccordionItemTitle>
+                            <AccordionItemBody>
+                              <div className="table-wrapper">
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Ingrediente</th>
+                                        <th>Costo Ordenar</th>
+                                        <th>Costo Adquirir</th>
+                                        <th>Costo Mantener</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {this.renderFebrero()}
+                                    </tbody>
+                                  </table>
+                              </div>
+                            </AccordionItemBody>
+                          </AccordionItem>
+                          <AccordionItem>
+                            <AccordionItemTitle>
+                              <h4>Marzo 2019</h4>
+                            </AccordionItemTitle>
+                            <AccordionItemBody>
+                              <div className="table-wrapper">
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Ingrediente</th>
+                                        <th>Costo Ordenar</th>
+                                        <th>Costo Adquirir</th>
+                                        <th>Costo Mantener</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {this.renderMarzo()}
+                                    </tbody>
+                                  </table>
+                              </div>
+                            </AccordionItemBody>
+                          </AccordionItem>
+                          <AccordionItem>
+                            <AccordionItemTitle>
+                              <h4>Abril 2019</h4>
+                            </AccordionItemTitle>
+                            <AccordionItemBody>
+                              <div className="table-wrapper">
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Ingrediente</th>
+                                        <th>Costo Ordenar</th>
+                                        <th>Costo Adquirir</th>
+                                        <th>Costo Mantener</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {this.renderAbril()}
+                                    </tbody>
+                                  </table>
+                              </div>
+                            </AccordionItemBody>
+                          </AccordionItem>
+                          <AccordionItem>
+                            <AccordionItemTitle>
+                              <h4>Mayo 2019</h4>
+                            </AccordionItemTitle>
+                            <AccordionItemBody>
+                              <div className="table-wrapper">
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Ingrediente</th>
+                                        <th>Costo Ordenar</th>
+                                        <th>Costo Adquirir</th>
+                                        <th>Costo Mantener</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {this.renderMayo()}
+                                    </tbody>
+                                  </table>
+                              </div>
+                            </AccordionItemBody>
+                          </AccordionItem>
+                          <AccordionItem>
+                            <AccordionItemTitle>
+                              <h4>Junio 2019</h4>
+                            </AccordionItemTitle>
+                            <AccordionItemBody>
+                              <div className="table-wrapper">
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Ingrediente</th>
+                                        <th>Costo Ordenar</th>
+                                        <th>Costo Adquirir</th>
+                                        <th>Costo Mantener</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {this.renderJunio()}
+                                    </tbody>
+                                  </table>
+                              </div>
+                            </AccordionItemBody>
+                          </AccordionItem>
+                        </Accordion>
+                        <br/>
+                        <br/>
                     </div>
-                </div>
-            </div>
+                
+            </section>
         );
     }
 }

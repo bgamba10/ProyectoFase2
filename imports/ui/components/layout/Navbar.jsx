@@ -31,107 +31,52 @@ class Navbar extends Component {
         return (
             <Router>
                 <div className="wrapper">
-                    <div className="sidebar">
-                        <div className="sidebar-wrapper">
-                            <div className="text-center">
-                                <img className="logo" src="images/logo.png" alt="Logo"/>
-
-                            </div>
-                            <ul className="nav">
+                    <header id="header">
+                        <h1>Cafetería</h1>
+                        <nav id="nav">
+                            
+                            <ul>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/">
-                                        <i className="far fa-calendar-alt"></i>
-                                        <p>Programación</p>
+                                        
+                                        Planeación
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/demanda">
-                                        <i className="fas fa-chart-line"></i>
-                                        <p>Demanda Cirugías</p>
+                                        
+                                        Cirugías
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/recetas">
-                                        <i className="fas fa-utensils"></i>
-                                        <p>Recetas</p>
+                                        
+                                        Recetas
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/ss">
-                                        <i className="fas fa-warehouse"></i>
-                                        <p>Stock de Seguridad</p>
+                                        
+                                        Security Stock
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/leadtimes">
-                                        <i className="far fa-clock"></i>
-                                        <p>Lead Times</p>
+                                        Lead Times
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/costos">
-                                        <i className="fas fa-dollar-sign"></i>
-                                        <p>Costos</p>
+                                        
+                                        Costos
                                     </NavLink>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
-                    <div className="main-panel">
-                        <nav className="navbar navbar-expand-lg " color-on-scroll="500">
-                            <div className=" container-fluid">
-                                <h4 className="card-category dark-blue"><strong>Heurísticas</strong></h4>
-                                <button className="navbar-toggler navbar-toggler-right" type="button"
-                                        data-toggle="collapse" data-target="#navbarNav" aria-controls="navigation-index"
-                                        aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                    <span className="navbar-toggler-bar burger-lines"></span>
-                                    <span className="navbar-toggler-bar burger-lines"></span>
-                                    <span className="navbar-toggler-bar burger-lines"></span>
-                                </button>
-                                <div className="collapse navbar-collapse" id="navbarNav">
-                                    <ul className="navbar-nav">
-                                        <li className="nav-item active">
-                                            <NavLink activeClassName="active-link" exact className="nav-link"
-                                                     to="/">
-                                                <p>Programación</p>
-                                            </NavLink>
-                                        </li>
-                                        <li className="nav-item active">
-                                            <NavLink activeClassName="active-link" exact className="nav-link"
-                                                     to="/demanda">
-                                                <p>Demanda Cirugías</p>
-                                            </NavLink>
-                                        </li>
-                                        <li className="nav-item active">
-                                            <NavLink activeClassName="active-link" exact className="nav-link"
-                                                     to="/recetas">
-                                                <p>Recetas</p>
-                                            </NavLink>
-                                        </li>
-                                        <li className="nav-item active">
-                                            <NavLink activeClassName="active-link" exact className="nav-link"
-                                                     to="/ss">
-                                                <p>Stock de Seguridad</p>
-                                            </NavLink>
-                                        </li>
-                                        <li className="nav-item active">
-                                            <NavLink activeClassName="active-link" exact className="nav-link"
-                                                     to="/leadtimes">
-                                                <p>Lead Times</p>
-                                            </NavLink>
-                                        </li>
-                                        <li className="nav-item active">
-                                            <NavLink activeClassName="active-link" exact className="nav-link"
-                                                     to="/costos">
-                                                <p>Costos</p>
-                                            </NavLink>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                         </nav>
-                        <div className="content">
+                    </header>
+                    <div className="main-panel" >
+                        
+                        <div className="container">
                             <Switch>
                                 <Route exact path="/"
                                        render={(props) => <Dashboard {...props} demand={this.props.demand} materials={this.props.materials} recipes={this.props.recipes}/>}/>
