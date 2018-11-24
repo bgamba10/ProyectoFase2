@@ -1,0 +1,68 @@
+[
+  {
+    "tipo": "Estéticas",
+    "demanda": {
+      "primero": "0",
+      "segundo": "0",
+      "tercero": "0",
+      "cuarto": "0",
+      "quinto": "0",
+      "sexto": "0"
+    }
+  },
+  {
+    "tipo": "Cardiacas",
+    "demanda": {
+      "primero": "0",
+      "segundo": "0",
+      "tercero": "0",
+      "cuarto": "0",
+      "quinto": "0",
+      "sexto": "0"
+    }
+  },
+  {
+    "tipo": "Respiratorias",
+    "demanda": {
+      "primero": "0",
+      "segundo": "0",
+      "tercero": "0",
+      "cuarto": "0",
+      "quinto": "0",
+      "sexto": "0"
+    }
+  },
+  {
+    "tipo": "Ortopédicas",
+    "demanda": {
+      "primero": "0",
+      "segundo": "0",
+      "tercero": "0",
+      "cuarto": "0",
+      "quinto": "0",
+      "sexto": "0"
+    }
+  },
+  {
+    "tipo": "Neurológicas",
+    "demanda": {
+      "primero": "0",
+      "segundo": "0",
+      "tercero": "0",
+      "cuarto": "0",
+      "quinto": "0",
+      "sexto": "0"
+    }
+  },
+  {
+    "tipo": "Pediátricas",
+    "demanda": {
+      "primero": "0",
+      "segundo": "0",
+      "tercero": "0",
+      "cuarto": "0",
+      "quinto": "0",
+      "sexto": "0"
+    }
+  }
+]
