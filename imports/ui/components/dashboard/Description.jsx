@@ -441,7 +441,7 @@ class Description extends Component {
                     </div>
                     <div className="card-body ">
                         <form>
-                            <table className="table table-bordered">
+                            <table className="table">
                                 <tbody className="">
                                     <tr>
                                         <th>Política</th>
@@ -452,14 +452,14 @@ class Description extends Component {
                                         <th colSpan="7" scope="colgroup">{this.state.insumo}</th>
                                     </tr>
                                     <tr>
-                                        <th>Se pide en</th>
-                                        <th>Periodo para los que se pide</th>
+                                        <th>Periodo en que se pide</th>
+                                        <th>Periodos para los que se pide</th>
                                         <th>Cantidad a pedir</th>
-                                        <th>Periodo en el que la orden llega</th>
-                                        <th>C. ordenar</th>
-                                        <th>C. adquirir</th>
-                                        <th>C. mantener</th>
-                                        <th>C. Total</th>
+                                        <th>Periodo en el que llega la orden</th>
+                                        <th>Costo de ordenar</th>
+                                        <th>Costo de adquirir</th>
+                                        <th>Costo de mantener</th>
+                                        <th>Costo total</th>
                                     </tr>
                                     {
                                         this.renderResults()
@@ -470,10 +470,10 @@ class Description extends Component {
                     </div>
                     <br />
                     <div className="card-body ">
-                        <p className="card-category">Las filas resaltadas en amarillo corresponden a la solución.</p>
+                        <small className="card-category">Las filas resaltadas en amarillo corresponden a la solución.</small>
                     </div>
                 </div>
-            </div >
+            </div>
         );
     }
 }

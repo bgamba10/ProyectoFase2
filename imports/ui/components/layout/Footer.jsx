@@ -4,11 +4,13 @@ class Footer extends Component {
 
     render() {
         return (
-            <footer className="footer">
-                <div className="container">
-                    <p className="copyright">
-                        Jose Antonio, Bibiana Gamba y Nicolás Acevedo Grupo: 35 © 2018
-                    </p>
+            <footer id="footer">
+                <div className="container">      
+                    <ul className="copyright">
+                        <li>&copy; Jose Antonio Felfle, Bibiana Gamba y Nicolás Acevedo</li>
+                        <li>Grupo 35</li>
+                        <li>Control de Producción 2018</li>
+                    </ul>
                 </div>
             </footer>
         );

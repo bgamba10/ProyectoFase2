@@ -29,7 +29,8 @@ class LeadTimes extends Component {
                     <td>{material.nombre}</td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={material.nombre} min="0" required=""
-                               type="number" defaultValue={material.leadtime}/></td>
+                               type="range" list="tickmarks" step="1" min="0" max="2" defaultValue={material.leadtime}/></td>
+                    <td>{material.leadtime} meses</td>
                 </tr>
             )
         });
@@ -40,26 +41,39 @@ class LeadTimes extends Component {
             this.renderLeadTimes()
         }
         return (
-            <div className="container-fluid">
-                <div className="card">
-                    <div className="content">
-                        <div className="card-header ">
-                            <h4 className="card-title">Lead Times</h4>
+            <section id="one" class="wrapper style1">
+                <div className="container">
+                    <div className="row 200%">
+                        <div className="6u 12u$(medium)">
+                                <header className="major">
+                                    <h2>Lead Times</h2>
+                                    <p>Ingrese el Lead Time de cada uno de los ingredientes</p>
+                                    <br/>
+                                    <img src="https://images.pexels.com/photos/1020323/pexels-photo-1020323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" width="100%"/>
+                                </header>
                         </div>
-                        <div className="card-body ">
-                            <table className="table table-bordered">
-                                <tbody className="">
+                        <div className="6u$ 12u$(medium)">
+                            <table>
+                                <thead>
                                 <tr>
-                                    <th>Nombre del insumo</th>
-                                    <th>Lead Time (meses)</th>
+                                    <th>Ingrediente</th>
+                                    <th>Lead Time</th>
+                                    <th></th>
                                 </tr>
+                                </thead>
+                                <tbody>
                                 {this.renderLeadTimes()}
                                 </tbody>
                             </table>
+                            <datalist id="tickmarks">
+                               <option value="0" label="0"/>
+                               <option value="1" label="1"/>
+                               <option value="2" label="2"/>
+                            </datalist>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         );
     }
 }

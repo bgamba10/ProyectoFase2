@@ -102,24 +102,36 @@ class Recipes extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <div className="card">
-                    <div className="content">
-                        <div className="card-header ">
-                            <h4 className="card-title">Número de platos requeridos por dieta</h4>
-                        </div>
-                        <div className="card-body ">
-                            <table className="table table-bordered">
-                                <tbody>
-                                <tr>
-                                    <th>Receta</th>
-                                    <th>Número de platos requeridos</th>
-                                </tr>
-                                {this.renderRecipeQuantities()}
-                                </tbody>
-                            </table>
+                <section class="wrapper style1">
+                    <div class="container 75%">
+                        <div class="row 200%">
+                            <div class="6u 12u$(medium)">
+                                <header class="major">
+                                    <h2>Platos requeridos por dieta</h2>
+                                    <p>Ingrese el número de platos necesarios por dieta</p>
+                                    <br/>
+                                    <img src="https://images.pexels.com/photos/95218/pexels-photo-95218.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" width="80%"/>
+                                </header>
+                            </div>
+                            <div class="6u$ 12u$(medium)">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Receta</th>
+                                        <th>Platos</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {this.renderRecipeQuantities()}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
+
+
+                
                 <div className="card">
                     <div className="content">
                         <div className="card-header ">
