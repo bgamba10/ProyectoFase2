@@ -11,9 +11,7 @@ class Description extends Component {
             colorear: []
         }
 
-        this.handleMCU = this.handleMCU.bind(this);
-        this.handlePPB = this.handlePPB.bind(this);
-        this.handleSM = this.handleSM.bind(this);
+        
         this.onChangeDropdown = this.onChangeDropdown.bind(this);
         this.calcularDemandas = this.calcularDemandas.bind(this);
         this.calcularSS = this.calcularSS.bind(this);
@@ -22,17 +20,6 @@ class Description extends Component {
         this.obtenerLeadTime = this.obtenerLeadTime.bind(this);
     }
 
-    handleMCU() {
-        this.setState({ politica: "MCU" });
-    }
-
-    handlePPB() {
-        this.setState({ politica: "PPB" });
-    }
-
-    handleSM() {
-        this.setState({ politica: "SM" });
-    }
 
     onChangeDropdown(e) {
         this.setState({ insumo: e.target.value });
@@ -98,7 +85,7 @@ class Description extends Component {
 
                 let resultadoAnterior = resultado[ resultado.length - 2];
 
-                if (this.state.politica === "MCU") {
+                if (this.props.policy === "MCU") {
                     let cantidadAPedirPeriodoAnterior = resultadoAnterior.split("$")[2];
                     let costoTotalPeriodoAnterior = resultadoAnterior.split("$")[8];
                     if (costoTotal / cantidadAPedir > costoTotalPeriodoAnterior / cantidadAPedirPeriodoAnterior) {
@@ -108,7 +95,7 @@ class Description extends Component {
                         indice++;
                     }
                 }
-                else if (this.state.politica === "PPB") {
+                else if (this.props.policy === "PPB") {
                     let costoPedirPeriodoAnterior = resultadoAnterior.split("$")[5];
                     let costoMantenerPeriodoAnterior = resultadoAnterior.split("$")[7];
                     if (Math.abs(costoPedir - costoMantener) > Math.abs(costoPedirPeriodoAnterior - costoMantenerPeriodoAnterior)) {
@@ -118,7 +105,7 @@ class Description extends Component {
                         indice ++;
                     }
                 }
-                else if (this.state.politica === "SM") {
+                else if (this.props.policy === "SM") {
                     let costoTotalPeriodoAnterior = resultadoAnterior.split("$")[8];
                     if (costoTotal / (periodosActuales.length) > costoTotalPeriodoAnterior / (periodosActuales.length - 1)) {
                         this.props.colorear.push(indice - 1);
@@ -406,21 +393,6 @@ class Description extends Component {
                     </div>
                     <hr />
                     <div className="card-header ">
-                        <h4 className="card-title">Escoge la heurística:</h4>
-                    </div>
-                    <br />
-                    <div className="row">
-                        <div className="col-md-2 mx-auto">
-                            <input className="btn btn-primary" type="submit" value="PPB" onClick={this.handlePPB} />
-                        </div>
-                        <div className="col-md-2 mx-auto">
-                            <input className="btn btn-primary" type="submit" value="Silver Meal" onClick={this.handleSM} />
-                        </div>
-                        <div className="col-md-2 mx-auto">
-                            <input className="btn btn-primary" type="submit" value="MCU" onClick={this.handleMCU} />
-                        </div>
-                    </div>
-                    <div className="card-header ">
                         <h4 className="card-title">Escoge el insumo:</h4>
                     </div>
                     <div>
@@ -447,7 +419,7 @@ class Description extends Component {
                                 <tbody className="">
                                     <tr>
                                         <th>Política</th>
-                                        <th colSpan="7" scope="colgroup">{this.state.politica}</th>
+                                        <th colSpan="7" scope="colgroup">{this.props.policy}</th>
                                     </tr>
                                     <tr>
                                         <th>Insumo</th>

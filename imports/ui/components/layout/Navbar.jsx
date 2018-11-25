@@ -34,29 +34,41 @@ class Navbar extends Component {
                     <header id="header">
                         <h1>Cafetería</h1>
                         <nav id="nav">
-                            
+
                             <ul>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/">
-                                        
-                                        Planeación
+
+                                        Silver Meal
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink activeClassName="active-link" exact className="nav-link" to="/MCU">
+
+                                        MCU
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink activeClassName="active-link" exact className="nav-link" to="/PPB">
+
+                                        PPB
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/demanda">
-                                        
+
                                         Cirugías
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/recetas">
-                                        
+
                                         Recetas
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/ss">
-                                        
+
                                         Security Stock
                                     </NavLink>
                                 </li>
@@ -67,7 +79,7 @@ class Navbar extends Component {
                                 </li>
                                 <li>
                                     <NavLink activeClassName="active-link" exact className="nav-link" to="/costos">
-                                        
+
                                         Costos
                                     </NavLink>
                                 </li>
@@ -75,11 +87,15 @@ class Navbar extends Component {
                         </nav>
                     </header>
                     <div className="main-panel" >
-                        
+
                         <div className="container">
                             <Switch>
                                 <Route exact path="/"
-                                       render={(props) => <Dashboard {...props} demand={this.props.demand} materials={this.props.materials} recipes={this.props.recipes}/>}/>
+                                       render={(props) => <Dashboard {...props} demand={this.props.demand} materials={this.props.materials} recipes={this.props.recipes} policy = "SM"/>}/>
+                                <Route exact path="/MCU"
+                                              render={(props) => <Dashboard {...props} demand={this.props.demand} materials={this.props.materials} recipes={this.props.recipes} policy = "MCU"/>}/>
+                                <Route exact path="/PPB"
+                                                     render={(props) => <Dashboard {...props} demand={this.props.demand} materials={this.props.materials} recipes={this.props.recipes} policy = "PPB"/>}/>
                                 <Route exact path="/demanda"
                                        render={(props) => <Demand {...props} demand={this.props.demand}/>}/>
                                 <Route exact path="/recetas"
@@ -90,6 +106,7 @@ class Navbar extends Component {
                                        render={(props) => <LeadTimes {...props} materials={this.props.materials}/>}/>
                                 <Route exact path="/costos"
                                        render={(props) => <Costs {...props} materials={this.props.materials}/>}/>
+
                             </Switch>
                         </div>
                         <Footer/>

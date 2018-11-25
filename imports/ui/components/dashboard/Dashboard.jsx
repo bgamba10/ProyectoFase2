@@ -10,7 +10,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <Description demand={this.props.demand} materials={this.props.materials} recipes={this.props.recipes} colorear={[]}/>
+                <Description demand={this.props.demand} materials={this.props.materials} recipes={this.props.recipes} colorear={[]} policy = {this.props.policy}/>
             </div>
         );
     }
