@@ -105,6 +105,7 @@ class Description extends Component {
                         this.props.colorear.push(indice - 1);
                         periodosActuales = [];
                         i--;
+                        indice++;
                     }
                 }
                 else if (this.state.politica === "PPB") {
@@ -114,6 +115,7 @@ class Description extends Component {
                         periodosActuales = [];
                         this.props.colorear.push(indice - 1);
                         i--;
+                        indice ++;
                     }
                 }
                 else if (this.state.politica === "SM") {
@@ -397,10 +399,10 @@ class Description extends Component {
                         <h4 className="card-title">Programación de los pedidos</h4>
                     </div>
                     <div className="card-body ">
-                        <p className="card-category">Esta herramienta permite realizar la programación de los pedidos
-                            mensuales del hospital. Para utilizarse, se deben ingresar los diferentes parámetros en las
-                            pestañas a mano izquierda. Una vez ingresados se debe escoger la heurística que se quiere seguir.
-                            Finalmente, se escoge el insumo para el cual se quiere conocer la forma en que se deben realizar los pedidos.</p>
+                        <p className="card-category"> La herramienta de la cafeteria permite a los empleados el hospital tener un manejo de los
+                        pedidos mensuales del hospital. Actualmente se tienen los datos del pedido pasado (video). Si desea cambiar algún valor
+                      utilice las pestañas de la parte superior de la herramienta para navegar entre los diferentes parámetros para llegar al resultado deseado.
+                    En esta pestaña podrá observar la planeación de los diferentes ingredientes a través de 3 herísticas: Silver Meal, MCU y PPB.</p>
                     </div>
                     <hr />
                     <div className="card-header ">
