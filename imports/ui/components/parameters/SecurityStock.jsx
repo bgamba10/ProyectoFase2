@@ -1,5 +1,14 @@
 import React, {Component} from "react";
 import {Meteor} from "meteor/meteor";
+import {
+     Accordion,
+     AccordionItem,
+     AccordionItemTitle,
+     AccordionItemBody,
+ } from 'react-accessible-accordion';
+
+ import 'react-accessible-accordion/dist/fancy-example.css';
+
 
 class SecurityStock extends Component {
     constructor(props) {
@@ -27,68 +36,253 @@ class SecurityStock extends Component {
         }
     }
 
-    renderSecurityStocks() {
+    renderSSEnero(){
         return this.props.materials.map((material) => {
             return (
                 <tr key={material._id}>
                     <td>{material.nombre}</td>
                     <td><input className="form-control text-center" onChange={this.handleInputChange}
                                name={`${material.nombre},primero`} min="0"
-                               max="100" required="" type="number" defaultValue={material.ss.primero}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`${material.nombre},segundo`} min="0"
-                               max="100" required="" type="number" defaultValue={material.ss.segundo}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`${material.nombre},tercero`} min="0"
-                               max="100" required="" type="number" defaultValue={material.ss.tercero}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`${material.nombre},cuarto`} min="0"
-                               max="100" required="" type="number" defaultValue={material.ss.cuarto}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`${material.nombre},quinto`} min="0"
-                               max="100" required="" type="number" defaultValue={material.ss.quinto}/></td>
-                    <td><input className="form-control text-center" onChange={this.handleInputChange}
-                               name={`${material.nombre},sexto`} min="0"
-                               max="100" required="" type="number" defaultValue={material.ss.sexto}/></td>
+                               max="100" required="" type="range" list="tickmarks" step="5" defaultValue={material.ss.primero}/></td>
+                    <td>{material.ss.primero}%</td>
                 </tr>
             )
         });
     }
 
+    renderSSFebrero(){
+        return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`${material.nombre},segundo`} min="0"
+                               max="100" required="" type="range" list="tickmarks" step="5"  defaultValue={material.ss.segundo}/></td>
+                    <td>{material.ss.segundo}%</td>
+                </tr>
+            )
+        });
+    }
+
+    renderSSMarzo(){
+        return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`${material.nombre},tercero`} min="0"
+                               max="100" required="" type="range" list="tickmarks" step="5"  defaultValue={material.ss.tercero}/></td>
+                    <td>{material.ss.tercero}%</td>
+                </tr>
+            )
+        });
+    }
+
+    renderSSAbril(){
+        return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`${material.nombre},cuarto`} min="0"
+                               max="100" required="" type="range" list="tickmarks" step="5" defaultValue={material.ss.cuarto}/></td>
+                    <td>{material.ss.cuarto}%</td>
+                </tr>
+            )
+        });
+    }
+
+    renderSSMayo(){
+        return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`${material.nombre},quinto`} min="0"
+                               max="100" required="" type="range" list="tickmarks" step="5" defaultValue={material.ss.quinto}/></td>
+                    <td>{material.ss.quinto}%</td>
+                </tr>
+            )
+        });
+    }
+
+    renderSSJunio(){
+        return this.props.materials.map((material) => {
+            return (
+                <tr key={material._id}>
+                    <td>{material.nombre}</td>
+                    <td><input className="form-control text-center" onChange={this.handleInputChange}
+                               name={`${material.nombre},sexto`} min="0"
+                               max="100" required="" type="range" list="tickmarks" step="5" defaultValue={material.ss.sexto}/></td>
+                    <td>{material.ss.sexto}%</td>
+                </tr>
+            )
+        });
+    }
+
+
+
+
+    
+
     render() {
         return (
-            <div className="container-fluid">
-                <div className="card">
-                    <div className="content">
-                        <div className="card-header ">
-                            <h4 className="card-title">Stock de Seguridad </h4>
-                        </div>
-                        <div className="card-body ">
-                            <p>Ingrese los porcentajes de la demanda de cada producto para cada mes que se tendrán como
-                                stock de seguridad. Ingrese un valor entre 0 y 100, en caso de ingresar un valor diferente
-                                se guardará el último valor válido (ej. si se ingresa 200 se guardará 20).</p>
-                            <table className="table table-bordered">
-                                <tbody className="">
-                                <tr>
-                                    <th></th>
-                                    <th colSpan="6" scope="colgroup">Mes</th>
-                                </tr>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>1</th>
-                                    <th>2</th>
-                                    <th>3</th>
-                                    <th>4</th>
-                                    <th>5</th>
-                                    <th>6</th>
-                                </tr>
-                                {this.renderSecurityStocks()}
-                                </tbody>
-                            </table>
+            
+                <section className="wrapper style1">
+                    <div className="container">
+                        <div className="row 200%">
+                            <div className="6u 12u$(medium)">
+                                <header class="major">
+                                    <h2>Security Stock</h2>
+                                    <p>Para cada mes puede ingresar el nivel de stock de seguridad que desea tener, haga click en el mes e ingrese los datos</p>
+                                    <br/>
+                                    <img src="https://images.pexels.com/photos/680302/pexels-photo-680302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" width="100%"/>
+                                </header>
+                            </div>
+                            <div className="6u$ 12u$(medium)">
+                                <Accordion>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>Enero 2019</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Security Stock</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              {this.renderSSEnero()}
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>Febrero 2019</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Security Stock</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              {this.renderSSFebrero()}
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>Marzo 2019</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Security Stock</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              {this.renderSSMarzo()}
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>Abril 2019</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Security Stock</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              {this.renderSSAbril()}
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>Mayo 2019</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Security Stock</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              {this.renderSSMayo()}
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>Junio 2019</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Security Stock</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              {this.renderSSJunio()}
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                </Accordion>
+                               <br/>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <datalist id="tickmarks">
+                       <option value="0" label="0%"/>
+                       <option value="10"/>
+                       <option value="20"/>
+                       <option value="30"/>
+                       <option value="40"/>
+                       <option value="50" label="50%"/>
+                       <option value="60"/>
+                       <option value="70"/>
+                       <option value="80"/>
+                       <option value="90"/>
+                       <option value="100" label="100%"/>
+                     </datalist>
+                </section>
+
+                
+            
         );
     }
 }
