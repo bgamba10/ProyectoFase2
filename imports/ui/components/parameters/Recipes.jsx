@@ -1,4 +1,12 @@
 import React, {Component} from "react";
+import {
+     Accordion,
+     AccordionItem,
+     AccordionItemTitle,
+     AccordionItemBody,
+ } from 'react-accessible-accordion';
+
+ import 'react-accessible-accordion/dist/fancy-example.css';
 
 class Recipes extends Component {
 
@@ -130,8 +138,158 @@ class Recipes extends Component {
                     </div>
                 </section>
 
+                <section className="wrapper style1">
+                    <div className="container">
+                        <header className="major special">
+                            <h2>Ingredientes por receta</h2>
+                            <p>Introduzca la cantidad que necesita de cada ingrediente para cada una de las recetas, haga click en la receta e introduzca la cantidad</p>
+                        </header>
+                        <div className="feature-grid">
+                            <Accordion>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>{this.props.recipes[0] ? this.props.recipes[0].nombre : ""}</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Cantidad</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>{this.props.recipes[1] ? this.props.recipes[1].nombre : ""}</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Cantidad</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>{this.props.recipes[2] ? this.props.recipes[2].nombre : ""}</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Cantidad</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>{this.props.recipes[3] ? this.props.recipes[3].nombre : ""}</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Cantidad</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>{this.props.recipes[4] ? this.props.recipes[4].nombre : ""}</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Cantidad</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                  <AccordionItem>
+                                    <AccordionItemTitle>
+                                      <h4>{this.props.recipes[5] ? this.props.recipes[5].nombre : ""}</h4>
+                                    </AccordionItemTitle>
+                                    <AccordionItemBody>
+                                      <div className="table-wrapper">
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Ingrediente</th>
+                                                <th>Cantidad</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </AccordionItemBody>
+                                  </AccordionItem>
+                                </Accordion>
+                               <br/>
+                        </div>
+                    </div>
+                </section>
 
                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div className="card">
                     <div className="content">
                         <div className="card-header ">

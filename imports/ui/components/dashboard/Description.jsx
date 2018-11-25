@@ -440,7 +440,7 @@ class Description extends Component {
                         <h4 className="card-title">Resultados:</h4>
                     </div>
                     <div className="card-body ">
-                        <form>
+                        
                             <table className="table">
                                 <tbody className="">
                                     <tr>
@@ -466,12 +466,12 @@ class Description extends Component {
                                     }
                                 </tbody>
                             </table>
-                        </form>
+                        
                     </div>
                     <br />
-                    <div className="card-body ">
-                        <small className="card-category">Las filas resaltadas en amarillo corresponden a la solución.</small>
-                    </div>
+                   
+                        <small>Las filas resaltadas en amarillo corresponden a la solución.</small>
+                    
                 </div>
             </div>
         );
