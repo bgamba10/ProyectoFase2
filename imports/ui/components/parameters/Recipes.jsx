@@ -59,7 +59,7 @@ class Recipes extends Component {
             return (
                 <tr key={recipe._id}>
                     <td>{recipe.nombre}</td>
-                    <td><input className="form-control text-center"
+                    <td><input className="text-center"
                                onChange={this.handleInputChangeQuantity} name={`${recipe.nombre}`}
                                min="0" required="" type="number" defaultValue={recipe.cantidad}/>
                     </td>
@@ -68,7 +68,7 @@ class Recipes extends Component {
         })
     }
 
-    renderRecipes() {
+    renderSana(){
         return this.names.map((ingredient) => {
             return (
                 <tr key={ingredient}>
@@ -78,27 +78,77 @@ class Recipes extends Component {
                                min="0"
                                required="" type="number" step="0.1" defaultValue={this.props.recipes[0][ingredient]}/>
                     </td>
+                </tr>
+            )
+        });
+    }
+
+    renderCalorias(){
+        return this.names.map((ingredient) => {
+            return (
+                <tr key={ingredient}>
+                    <td className="first-row">{ingredient}</td>
                     <td><input className="form-control text-center"
                                onChange={this.handleInputChange} name={`${ingredient},${this.props.recipes[1].nombre}`}
                                min="0"
                                required="" type="number" step="0.1" defaultValue={this.props.recipes[1][ingredient]}/>
                     </td>
+                </tr>
+            )
+        });
+    }
+
+    renderVitaminas(){
+        return this.names.map((ingredient) => {
+            return (
+                <tr key={ingredient}>
+                    <td className="first-row">{ingredient}</td>
                     <td><input className="form-control text-center"
                                onChange={this.handleInputChange} name={`${ingredient},${this.props.recipes[2].nombre}`}
                                min="0"
                                required="" type="number" step="0.1" defaultValue={this.props.recipes[2][ingredient]}/>
                     </td>
-                    <td><input className="form-control text-center"
+                </tr>
+            )
+        });
+    }
+
+    renderBalanceada(){
+        return this.names.map((ingredient) => {
+            return (
+                <tr key={ingredient}>
+                    <td className="first-row">{ingredient}</td>
+                    <td><input className="text-center"
                                onChange={this.handleInputChange} name={`${ingredient},${this.props.recipes[3].nombre}`}
                                min="0"
                                required="" type="number" step="0.1" defaultValue={this.props.recipes[3][ingredient]}/>
                     </td>
+                </tr>
+            )
+        });
+    }
+
+    renderVariada(){
+        return this.names.map((ingredient) => {
+            return (
+                <tr key={ingredient}>
+                    <td className="first-row">{ingredient}</td>
                     <td><input className="form-control text-center"
                                onChange={this.handleInputChange} name={`${ingredient},${this.props.recipes[4].nombre}`}
                                min="0"
                                required="" type="number" step="0.1" defaultValue={this.props.recipes[4][ingredient]}/>
                     </td>
-                    <td><input onChange={this.handleInputChange} className="form-control text-center"
+                </tr>
+            )
+        });
+    }
+
+    renderBasica(){
+        return this.names.map((ingredient) => {
+            return (
+                <tr key={ingredient}>
+                    <td className="first-row">{ingredient}</td>
+                    <td><input onChange={this.handleInputChange} className="text-center"
                                name={`${ingredient},${this.props.recipes[5].nombre}`} min="0"
                                required="" type="number" step="0.1" defaultValue={this.props.recipes[5][ingredient]}/>
                     </td>
@@ -106,6 +156,7 @@ class Recipes extends Component {
             )
         });
     }
+
 
     render() {
         return (
@@ -160,7 +211,7 @@ class Recipes extends Component {
                                               </tr>
                                             </thead>
                                             <tbody>
-                                              
+                                                {this.props.recipes[0] ? this.renderSana() : <tr></tr>}
                                             </tbody>
                                           </table>
                                       </div>
@@ -180,7 +231,7 @@ class Recipes extends Component {
                                               </tr>
                                             </thead>
                                             <tbody>
-                                              
+                                                {this.props.recipes[0] ? this.renderCalorias() : <tr></tr>}
                                             </tbody>
                                           </table>
                                       </div>
@@ -200,7 +251,7 @@ class Recipes extends Component {
                                               </tr>
                                             </thead>
                                             <tbody>
-                                              
+                                              {this.props.recipes[0] ? this.renderVitaminas() : <tr></tr>}
                                             </tbody>
                                           </table>
                                       </div>
@@ -220,7 +271,7 @@ class Recipes extends Component {
                                               </tr>
                                             </thead>
                                             <tbody>
-                                              
+                                                {this.props.recipes[0] ? this.renderBalanceada() : <tr></tr>}
                                             </tbody>
                                           </table>
                                       </div>
@@ -240,7 +291,7 @@ class Recipes extends Component {
                                               </tr>
                                             </thead>
                                             <tbody>
-                                              
+                                              {this.props.recipes[0] ? this.renderVariada() : <tr></tr>}
                                             </tbody>
                                           </table>
                                       </div>
@@ -260,7 +311,7 @@ class Recipes extends Component {
                                               </tr>
                                             </thead>
                                             <tbody>
-                                              
+                                              {this.props.recipes[0] ? this.renderBasica() : <tr></tr>}
                                             </tbody>
                                           </table>
                                       </div>
@@ -271,52 +322,6 @@ class Recipes extends Component {
                         </div>
                     </div>
                 </section>
-
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <div className="card">
-                    <div className="content">
-                        <div className="card-header ">
-                            <h4 className="card-title">Insumos requeridos por receta</h4>
-                        </div>
-                        <div className="card-body ">
-                            <table className="table table-bordered">
-                                <tbody>
-                                <tr>
-                                    <th></th>
-                                    <th colSpan="6" scope="colgroup">Receta</th>
-                                </tr>
-                                <tr>
-                                    <th>Insumo</th>
-                                    <th>{this.props.recipes[0] ? this.props.recipes[0].nombre : ""}</th>
-                                    <th>{this.props.recipes[1] ? this.props.recipes[1].nombre : ""}</th>
-                                    <th>{this.props.recipes[2] ? this.props.recipes[2].nombre : ""}</th>
-                                    <th>{this.props.recipes[3] ? this.props.recipes[3].nombre : ""}</th>
-                                    <th>{this.props.recipes[4] ? this.props.recipes[4].nombre : ""}</th>
-                                    <th>{this.props.recipes[5] ? this.props.recipes[5].nombre : ""}</th>
-                                </tr>
-                                {this.props.recipes[0] ? this.renderRecipes() : <tr></tr>}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
             </div>
         );
     }
