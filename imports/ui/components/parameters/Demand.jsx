@@ -73,12 +73,12 @@ class Demand extends Component {
                                 </tr>
                                 <tr>
                                     <th>Nombre</th>
-                                    <th>1</th>
-                                    <th>2</th>
-                                    <th>3</th>
-                                    <th>4</th>
-                                    <th>5</th>
-                                    <th>6</th>
+                                    <th>Enero</th>
+                                    <th>Febrero</th>
+                                    <th>Marzo</th>
+                                    <th>Abril</th>
+                                    <th>Mayo</th>
+                                    <th>Junio</th>
                                 </tr>
                                 {this.props.demand[0]?this.renderDemand():<tr></tr>}
                                 </tbody>
