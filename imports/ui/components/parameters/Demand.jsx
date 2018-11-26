@@ -58,25 +58,19 @@ class Demand extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div>
 
-                
-
-
-                <div className="card">
-                    <div className="content">
-                        <div className="card-header ">
-                            <h4 className="card-title">Demanda por tipo de cirugía para los próximos 6 meses</h4>
-                        </div>
-                        <div className="card-body ">
-                            <table className="table table-bordered">
-                                <tbody>
+                <section className="wrapper style1">
+                    <div className="container">
+                        <header className="major special">
+                            <h2>Demanda Cirugías</h2>
+                            <p>Ingrese la demanda para cada mes para cada tipo de cirugía</p>
+                        </header>
+                        <table>
+                                <thead>
+                                
                                 <tr>
                                     <th></th>
-                                    <th colSpan="6" scope="colgroup">Mes</th>
-                                </tr>
-                                <tr>
-                                    <th>Nombre</th>
                                     <th>Enero</th>
                                     <th>Febrero</th>
                                     <th>Marzo</th>
@@ -84,12 +78,15 @@ class Demand extends Component {
                                     <th>Mayo</th>
                                     <th>Junio</th>
                                 </tr>
+                                </thead>
+                                <tbody>
                                 {this.props.demand[0]?this.renderDemand():<tr></tr>}
                                 </tbody>
                             </table>
-                        </div>
+                           
                     </div>
-                </div>
+                </section>
+
             </div>
         );
     }
