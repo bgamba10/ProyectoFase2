@@ -72,7 +72,10 @@ class Description extends Component {
             //Costos
             let costoAdquirir = this.calcularCostoAdquirir(cantidadAPedir, costosAdquirir[Math.abs(i - leadTime)]);
             let costoMantener = this.calcularCostoMantener(demandas, requerimientosNetos, ss, costosMantener, leadTime, periodosActuales);
-            let costoPedir = costosPedir[cantidadMaximaDeLeadTime + i - leadTime];
+            let costoPedir = 0;
+             if(cantidadAPedir > 0){
+                 costoPedir = costosPedir[cantidadMaximaDeLeadTime + i - leadTime];
+             }
             let costoTotal = costoAdquirir + costoMantener + costoPedir;
 
             let resultadoAAnadir = indice + "$" + (periodosActuales[0] + 1) + "$" + this.imprimirPeriodosActuales(periodosActuales) +
@@ -173,7 +176,7 @@ class Description extends Component {
 
         for (let i = periodosActuales[0]; i < periodosActuales[periodosActuales.length - 1] + 1; i++) {
             let sumaRequerimientos = 0;
-            for (let j = i + 1; j < periodosActuales.length; j++) {
+            for (let j = i + 1; j < periodosActuales[periodosActuales.length - 1] + 1; j++) {
                 sumaRequerimientos = sumaRequerimientos + requerimientosNetos[j + leadTime];
             }
             costo = costo + (sumaRequerimientos + Math.ceil(ss[i + leadTime] * demandas[i + leadTime])) * costoMantener[i];
@@ -202,12 +205,12 @@ class Description extends Component {
                 if (tipoCirugia === "Estéticas" && tipoDieta === "Sana") {
                     demanda[0] = demanda[0] + parseFloat(demand.demanda.primero) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[1] = demanda[1] + parseFloat(demand.demanda.segundo) * parseFloat(platosRequeridos) * cantidadPorPlato;
-                    demanda[2] = demanda[2] + parseFloat(demand.demanda.tercero) * parseFloat(platosRequeridos) * cantidadPorPlato - 270;
+                    demanda[2] = demanda[2] + parseFloat(demand.demanda.tercero) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[3] = demanda[3] + parseFloat(demand.demanda.cuarto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[4] = demanda[4] + parseFloat(demand.demanda.quinto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[5] = demanda[5] + parseFloat(demand.demanda.sexto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                 }
-                else if (tipoCirugia === "Cardiacas" && tipoDieta === "Calorías y proteínas") {
+                if (tipoCirugia === "Cardiacas" && tipoDieta === "Calorías y proteínas") {
                     demanda[0] = demanda[0] + parseFloat(demand.demanda.primero) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[1] = demanda[1] + parseFloat(demand.demanda.segundo) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[2] = demanda[2] + parseFloat(demand.demanda.tercero) * parseFloat(platosRequeridos) * cantidadPorPlato;
@@ -215,7 +218,7 @@ class Description extends Component {
                     demanda[4] = demanda[4] + parseFloat(demand.demanda.quinto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[5] = demanda[5] + parseFloat(demand.demanda.sexto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                 }
-                else if (tipoCirugia === "Respiratorias" && tipoDieta === "Vitaminas y proteínas") {
+                if (tipoCirugia === "Respiratorias" && tipoDieta === "Vitaminas y proteínas") {
                     demanda[0] = demanda[0] + parseFloat(demand.demanda.primero) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[1] = demanda[1] + parseFloat(demand.demanda.segundo) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[2] = demanda[2] + parseFloat(demand.demanda.tercero) * parseFloat(platosRequeridos) * cantidadPorPlato;
@@ -223,7 +226,7 @@ class Description extends Component {
                     demanda[4] = demanda[4] + parseFloat(demand.demanda.quinto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[5] = demanda[5] + parseFloat(demand.demanda.sexto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                 }
-                else if (tipoCirugia === "Ortopédicas" && tipoDieta === "Balanceada") {
+                if (tipoCirugia === "Ortopédicas" && tipoDieta === "Balanceada") {
                     demanda[0] = demanda[0] + parseFloat(demand.demanda.primero) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[1] = demanda[1] + parseFloat(demand.demanda.segundo) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[2] = demanda[2] + parseFloat(demand.demanda.tercero) * parseFloat(platosRequeridos) * cantidadPorPlato;
@@ -231,7 +234,7 @@ class Description extends Component {
                     demanda[4] = demanda[4] + parseFloat(demand.demanda.quinto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[5] = demanda[5] + parseFloat(demand.demanda.sexto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                 }
-                else if (tipoCirugia === "Neurológica" && tipoDieta === "Variada") {
+                if (tipoCirugia === "Neurológica" && tipoDieta === "Variada") {
                     demanda[0] = demanda[0] + parseFloat(demand.demanda.primero) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[1] = demanda[1] + parseFloat(demand.demanda.segundo) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[2] = demanda[2] + parseFloat(demand.demanda.tercero) * parseFloat(platosRequeridos) * cantidadPorPlato;
@@ -239,7 +242,7 @@ class Description extends Component {
                     demanda[4] = demanda[4] + parseFloat(demand.demanda.quinto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[5] = demanda[5] + parseFloat(demand.demanda.sexto) * parseFloat(platosRequeridos) * cantidadPorPlato;
                 }
-                else if (tipoCirugia === "Pediátricas" && tipoDieta === "Básica") {
+                if (tipoCirugia === "Pediátricas" && tipoDieta === "Básica") {
                     demanda[0] = demanda[0] + parseFloat(demand.demanda.primero) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[1] = demanda[1] + parseFloat(demand.demanda.segundo) * parseFloat(platosRequeridos) * cantidadPorPlato;
                     demanda[2] = demanda[2] + parseFloat(demand.demanda.tercero) * parseFloat(platosRequeridos) * cantidadPorPlato;
@@ -386,7 +389,7 @@ class Description extends Component {
                     <div className="container">
                         <header className="major">
                             <h2>Programación de los ingredientes de las recetas</h2>
-                            <p>La herramienta de la cafeteria permite a los empleados el hospital tener un manejo de los
+                            <p>La herramienta de la cafetería permite a los empleados el hospital tener un manejo de los
                             pedidos mensuales del hospital. Actualmente, se tienen los datos del pedido pasado (video). Si desea cambiar algún valor
                           utilice las pestañas de la parte superior de la herramienta para navegar entre los diferentes parámetros para llegar al resultado deseado.
                         En esta pestaña podrá observar la planeación de los diferentes ingredientes a través de la heurística selecionada. En caso de querer observar
