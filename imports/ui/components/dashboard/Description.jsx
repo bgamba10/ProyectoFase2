@@ -78,8 +78,8 @@ class Description extends Component {
              }
             let costoTotal = costoAdquirir + costoMantener + costoPedir;
 
-            let resultadoAAnadir = indice + "$" + (periodosActuales[0] + 1) + "$" + this.imprimirPeriodosActuales(periodosActuales) +
-                "$" + cantidadAPedir + "$" + (periodosActuales[0] + 1 - leadTime) + "$" + costoPedir + "$" + costoAdquirir
+            let resultadoAAnadir = (indice) + "$" + (periodosActuales[0] + 1 - leadTime) + "$" + this.imprimirPeriodosActuales(periodosActuales) +
+                "$" + cantidadAPedir + "$" + (periodosActuales[0] + 1) + "$" + costoPedir + "$" + costoAdquirir
                 + "$" + costoMantener + "$" + costoTotal;
 
             resultado.push(resultadoAAnadir);
@@ -89,9 +89,9 @@ class Description extends Component {
                 let resultadoAnterior = resultado[ resultado.length - 2];
 
                 if (this.props.policy === "MCU") {
-                    let cantidadAPedirPeriodoAnterior = resultadoAnterior.split("$")[2];
+                    let cantidadAPedirPeriodoAnterior = resultadoAnterior.split("$")[3];
                     let costoTotalPeriodoAnterior = resultadoAnterior.split("$")[8];
-                    if (costoTotal / cantidadAPedir > costoTotalPeriodoAnterior / cantidadAPedirPeriodoAnterior) {
+                    if ((costoTotal / cantidadAPedir) > (costoTotalPeriodoAnterior / cantidadAPedirPeriodoAnterior)) {
                         this.props.colorear.push(indice - 1);
                         periodosActuales = [];
                         i--;
