@@ -11,7 +11,7 @@ class Description extends Component {
             colorear: []
         }
 
-        
+
         this.onChangeDropdown = this.onChangeDropdown.bind(this);
         this.calcularDemandas = this.calcularDemandas.bind(this);
         this.calcularSS = this.calcularSS.bind(this);
@@ -387,9 +387,10 @@ class Description extends Component {
                         <header className="major">
                             <h2>Programación de los ingredientes de las recetas</h2>
                             <p>La herramienta de la cafeteria permite a los empleados el hospital tener un manejo de los
-                        pedidos mensuales del hospital. Actualmente se tienen los datos del pedido pasado (video). Si desea cambiar algún valor
-                      utilice las pestañas de la parte superior de la herramienta para navegar entre los diferentes parámetros para llegar al resultado deseado.
-                    En esta pestaña podrá observar la planeación de los diferentes ingredientes a través de 3 herísticas: Silver Meal, MCU y PPB.</p>
+                            pedidos mensuales del hospital. Actualmente, se tienen los datos del pedido pasado (video). Si desea cambiar algún valor
+                          utilice las pestañas de la parte superior de la herramienta para navegar entre los diferentes parámetros para llegar al resultado deseado.
+                        En esta pestaña podrá observar la planeación de los diferentes ingredientes a través de la heurística selecionada. En caso de querer observar
+                      otra heurística dirígase a la pestaña correspondiente. </p>
                         </header>
                         <div className="12u$">
                                     <div className="select-wrapper">
@@ -437,11 +438,11 @@ class Description extends Component {
                                     }
                                 </tbody>
                             </table>
-                           
+
                     </div>
                 </section>
 
-                
+
             </div>
         );
     }
