@@ -177,9 +177,12 @@ class Description extends Component {
         for (let i = periodosActuales[0]; i < periodosActuales[periodosActuales.length - 1] + 1; i++) {
             let sumaRequerimientos = 0;
             for (let j = i + 1; j < periodosActuales[periodosActuales.length - 1] + 1; j++) {
+              if (requerimientosNetos[j +leadTime] > 0 )
+              {
                 sumaRequerimientos = sumaRequerimientos + requerimientosNetos[j + leadTime];
+              }
             }
-            costo = costo + (sumaRequerimientos + Math.ceil(ss[i + leadTime] * demandas[i + leadTime])) * costoMantener[i];
+            costo = costo + (sumaRequerimientos + Math.ceil(ss[i] * demandas[i])) * costoMantener[i];
         }
 
         return costo;
