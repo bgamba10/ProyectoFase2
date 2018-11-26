@@ -404,9 +404,9 @@ class Description extends Component {
                     </div>
                 </section>
 
-                <section id="three" class="wrapper style1">
-                    <div class="container">
-                        <header class="major special">
+                <section className="wrapper style1">
+                    <div className="container">
+                        <header className="major special">
                             <h2>Resultados</h2>
                             <p>Los siguientes son los resultados del ingrediente seleccionado, las filas resaltadas muestran la solución</p>
                         </header>
