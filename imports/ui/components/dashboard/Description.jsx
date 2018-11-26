@@ -358,7 +358,7 @@ class Description extends Component {
     renderDropdownItems() {
         return this.props.materials.map((d) => {
             return (
-                <option key={d.nombre} className="dropdown-item">{d.nombre}</option>
+                <option key={d.nombre}>{d.nombre}</option>
             )
         });
     }
@@ -380,43 +380,38 @@ class Description extends Component {
 
     render() {
         return (
-            <div className="card">
-                <div className="content">
-                    <div className="card-header ">
-                        <h4 className="card-title">Programación de los pedidos</h4>
-                    </div>
-                    <div className="card-body ">
-                        <p className="card-category"> La herramienta de la cafeteria permite a los empleados el hospital tener un manejo de los
+            <div>
+
+                <section className="wrapper style1 special">
+                    <div className="container">
+                        <header className="major">
+                            <h2>Programación de los ingredientes de las recetas</h2>
+                            <p>La herramienta de la cafeteria permite a los empleados el hospital tener un manejo de los
                         pedidos mensuales del hospital. Actualmente se tienen los datos del pedido pasado (video). Si desea cambiar algún valor
                       utilice las pestañas de la parte superior de la herramienta para navegar entre los diferentes parámetros para llegar al resultado deseado.
                     En esta pestaña podrá observar la planeación de los diferentes ingredientes a través de 3 herísticas: Silver Meal, MCU y PPB.</p>
-                    </div>
-                    <hr />
-                    <div className="card-header ">
-                        <h4 className="card-title">Escoge el insumo:</h4>
-                    </div>
-                    <div>
-                        <div className="row">
-                            <div className="col-md-2 mx-auto">
-                                <form>
-                                    <label>
-                                        <select className="form-control" onChange={this.onChangeDropdown}>
+                        </header>
+                        <div className="12u$">
+                                    <div className="select-wrapper">
+                                        <select onChange={this.onChangeDropdown}>
                                             {
                                                 this.renderDropdownItems()
                                             }
                                         </select>
-                                    </label>
-                                </form>
-                            </div>
-                        </div>
+                                    </div>
+                                </div>
+                                <br/>
                     </div>
-                    <div className="card-header ">
-                        <h4 className="card-title">Resultados:</h4>
-                    </div>
-                    <div className="card-body ">
-                        
-                            <table className="table">
-                                <tbody className="">
+                </section>
+
+                <section id="three" class="wrapper style1">
+                    <div class="container">
+                        <header class="major special">
+                            <h2>Resultados</h2>
+                            <p>Los siguientes son los resultados del ingrediente seleccionado, las filas resaltadas muestran la solución</p>
+                        </header>
+                        <table>
+                                <thead>
                                     <tr>
                                         <th>Política</th>
                                         <th colSpan="7" scope="colgroup">{this.props.policy}</th>
@@ -435,18 +430,18 @@ class Description extends Component {
                                         <th>Costo de mantener</th>
                                         <th>Costo total</th>
                                     </tr>
+                                    </thead>
+                                    <tbody>
                                     {
                                         this.renderResults()
                                     }
                                 </tbody>
                             </table>
-                        
+                           
                     </div>
-                    <br />
-                   
-                        <small>Las filas resaltadas en amarillo corresponden a la solución.</small>
-                    
-                </div>
+                </section>
+
+                
             </div>
         );
     }
